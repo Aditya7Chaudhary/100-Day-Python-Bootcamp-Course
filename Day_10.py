@@ -26,7 +26,6 @@ def calculator(l):
         else:
             return
 
-
 s = input("Enter the calculation you want to make (Kindly enter space between characters) :\n")
 l = s.split(" ")
 
