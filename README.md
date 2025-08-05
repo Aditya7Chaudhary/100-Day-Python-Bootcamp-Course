@@ -1,5 +1,6 @@
 # 🚀 100 Days of Python Bootcamp (Angela Yu - Udemy)
 
+Hello!!
 Welcome to my personal repository for the **100 Days of Code - Python Bootcamp** by Angela Yu on Udemy!  
 This journey is focused on mastering Python through practical projects and daily coding challenges.
 
