@@ -12,11 +12,9 @@ I will be updating this repository daily with the code I write for each day’s 
 
 | Day | Topics Covered | Status | Link |
 |-----|----------------|--------|------|
-| 1   | Print, Variables, Input | ✅ Done | [Day 1](./Day001) |
-| 2   | Data Types, Type Conversion | ✅ Done | [Day 2](./Day002) |
-| 3   | Conditional Statements | ✅ Done | [Day 3](./Day003) |
-| ... | ... | ... | ... |
-| 100 | Final Capstone Project | 🔜 | [Day 100](./Day100) |
+| 1   | Print, Variables, Input | ✅ Done | [Day 1](./Day_1) |
+| 2   | Data Types, Type Conversion | ✅ Done | [Day 2](./Day_2) |
+| 3   | Conditional Statements | ✅ Done | [Day 3](./Day_3) |
 
 > ✅ = Completed, 🔜 = Coming soon
 
