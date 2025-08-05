@@ -12,9 +12,9 @@ I will be updating this repository daily with the code I write for each day’s 
 
 | Day | Topics Covered | Status | Link |
 |-----|----------------|--------|------|
-| 1   | Print, Variables, Input | ✅ Done | [Day 1](./Day_1) |
-| 2   | Data Types, Type Conversion | ✅ Done | [Day 2](./Day_2) |
-| 3   | Conditional Statements | ✅ Done | [Day 3](./Day_3) |
+| 1   | Print, Variables, Input | ✅ Done | [Day 1](./Day_1.py) |
+| 2   | Data Types, Type Conversion | ✅ Done | [Day 2](./Day_2.py) |
+| 3   | Conditional Statements | ✅ Done | [Day 3](./Day_3.py) |
 
 > ✅ = Completed, 🔜 = Coming soon
 
