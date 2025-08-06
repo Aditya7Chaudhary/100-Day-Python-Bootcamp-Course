@@ -9,6 +9,7 @@ This journey is focused on mastering Python through practical projects and daily
 ## 📅 Daily Progress
 
 I will be updating this repository daily with the code I write for each day’s challenge or project.
+Kindly note that some days didn't had a project but coding in someother website so those days files won't be available in the repository.
 
 | Day | Topics Covered | Status | Link |
 |-----|----------------|--------|------|
@@ -24,7 +25,8 @@ I will be updating this repository daily with the code I write for each day’s 
 | 10  | Functions with Outputs | ✅ Done | [Day 10](./Day_010.py) |
 | 11  | Blackjack Capstone Project | ✅ Done | [Day 11](./Day_011.py) |
 | 12  | Global and Local Scope | ✅ Done | [Day 12](./Day_012.py) |
-| 13  | Debugging | 🔜 Coming soon | [Day 13](./Day_013.py) |
+| 13  | Debugging | ✅ Done | [Day 13](./Day_013.py) |
+| 14  | Higher-Lower game project | 🔜 Coming soon | [Day 14](./Day_014.py) |
 
 
 > ✅ = Completed, 🔜 = Coming soon
