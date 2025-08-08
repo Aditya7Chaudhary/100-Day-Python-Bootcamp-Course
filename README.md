@@ -27,7 +27,8 @@ Kindly note that some days didn't had a project but coding in someother website 
 | 12  | Global and Local Scope | ✅ Done | [Day 12](./Day_012.py) |
 | 13  | Debugging | ✅ Done | [Day 13](./Day_013.py) |
 | 14  | Heigher or Lower game | ✅ Done | [Day 14](./Day_014/Day_014.py) |
-| 15  | Coffee machine project | 🔜 Coming soon | [Day 15](./Day_015.py) |
+| 15  | Coffee machine project | ✅ Done | [Day 15](./Day_015.py) |
+| 16  | Object Oriented Programming | 🔜 Coming soon | [Day 16](./Day_016.py) |
 
 
 
