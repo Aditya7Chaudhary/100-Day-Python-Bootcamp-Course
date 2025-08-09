@@ -28,7 +28,8 @@ Kindly note that some days didn't had a project but coding in someother website 
 | 13  | Debugging | ✅ Done | [Day 13](./Day_013.py) |
 | 14  | Heigher or Lower game | ✅ Done | [Day 14](./Day_014/Day_014.py) |
 | 15  | Coffee machine project | ✅ Done | [Day 15](./Day_015.py) |
-| 16  | Object Oriented Programming | 🔜 Coming soon | [Day 16](./Day_016.py) |
+| 16  | Object Oriented Programming | ✅ Done | [Day 16](./Day_016/Day_016.py) |
+| 16  | The Benefits of OOPS | 🔜 Coming soon | [Day 16](./Day_016.py) |
 
 
 
