@@ -29,8 +29,8 @@ Kindly note that some days didn't had a project but coding in someother website 
 | 14  | Heigher or Lower game | ✅ Done | [Day 14](./Day_014/Day_014.py) |
 | 15  | Coffee machine project | ✅ Done | [Day 15](./Day_015.py) |
 | 16  | Object Oriented Programming | ✅ Done | [Day 16](./Day_016/Day_016.py) |
-| 16  | The Benefits of OOPS | 🔜 Coming soon | [Day 17](./Day_017.py) |
-
+| 17  | The Benefits of OOPS | ✅ Done | [Day 17](./Day_017/Day_017.py) |
+| 18  | Turtle and the GUI | 🔜 Coming soon | [Day 18](./Day_018.py) |
 
 
 > ✅ = Completed, 🔜 = Coming soon
