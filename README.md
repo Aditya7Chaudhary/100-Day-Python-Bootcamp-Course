@@ -30,7 +30,8 @@ Kindly note that some days didn't had a project but coding in someother website 
 | 15  | Coffee machine project | ✅ Done | [Day 15](./Day_015.py) |
 | 16  | Object Oriented Programming | ✅ Done | [Day 16](./Day_016/Day_016.py) |
 | 17  | The Benefits of OOPS | ✅ Done | [Day 17](./Day_017/Day_017.py) |
-| 18  | Turtle and the GUI | 🔜 Coming soon | [Day 18](./Day_018.py) |
+| 18  | Turtle and the GUI | ✅ Done | [Day 18](./Day_018.py) |
+| 19  | Instances, State and Higher Order | 🔜 Coming soon | [Day 19](./Day_019.py) |
 
 
 > ✅ = Completed, 🔜 = Coming soon
