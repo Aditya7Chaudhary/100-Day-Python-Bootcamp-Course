@@ -32,6 +32,7 @@ Kindly note that some days didn't had a project but coding in someother website 
 | 17  | The Benefits of OOPS | ✅ Done | [Day 17](./Day_017/Day_017.py) |
 | 18  | Turtle and the GUI | ✅ Done | [Day 18](./Day_018.py) |
 | 19  | Instances, State and Higher Order | ✅ Done | [Day 19](./Day_019) |
+| 20  | Snake Game Part 1 | 🔜 Coming soon | [Day 20](./Day_020) |
 
 
 > ✅ = Completed, 🔜 = Coming soon
