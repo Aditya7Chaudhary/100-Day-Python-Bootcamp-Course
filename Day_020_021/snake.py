@@ -1,4 +1,5 @@
-from turtle import Turtle
+from turtle import Turtle,Screen
+screen = Screen()
 
 class Snake:
     def __init__(self):
@@ -18,6 +19,35 @@ class Snake:
             i.goto(a,0)
             a -= 20
 
+    def add_tail(self):
+        self.s = Turtle()
+        i = self.s
+        i.shape("square")
+        i.color('white')
+        i.penup()
+
+        e = self.segments[-1]
+        if e.heading == 0:
+            i.goto((e.pos()[0]-20,e.pos()[1]))
+        elif e.heading == 90:
+            i.goto((e.pos()[0],e.pos()[1]-20))
+        elif e.heading == 180:
+            i.goto((e.pos()[0]+20,e.pos()[1]))
+        elif e.heading == 270:
+            i.goto((e.pos()[0],e.pos()[1]+20))
+
+        self.segments.append(i)
+
+    def wall_hit(self):
+        x,y = self.segments[0].pos()
+        if x > 500 or x < -500 or y > 250 or y < -250:
+            return True
+        
+    def hit_tail(self):
+        x,y = self.segments[0].pos()
+        for i in self.segments:
+            if i.pos() == (x,y):
+                return True
 
     def move(self):
         i = 1
@@ -29,7 +59,7 @@ class Snake:
             seg[i].goto(x_cod,y_cod)
             x_cod = new_x_cod
             y_cod = new_y_cod
-            i += 1     
+            i += 1           
 
     def left(self):
         if self.segments[0].heading() != 0:
@@ -45,4 +75,4 @@ class Snake:
 
     def down(self):
         if self.segments[0].heading() != 90:
-            self.segments[0].setheading(270)    
+            self.segments[0].setheading(270)
