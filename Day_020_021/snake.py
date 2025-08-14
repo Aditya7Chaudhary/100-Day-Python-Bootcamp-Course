@@ -32,13 +32,17 @@ class Snake:
             i += 1     
 
     def left(self):
-        self.segments[0].setheading(180)
+        if self.segments[0].heading() != "LEFT":
+            self.segments[0].setheading(180)
 
     def right(self):
-        self.segments[0].setheading(0)
+        if self.segments[0].heading() != "RIGHT":
+            self.segments[0].setheading(0)
 
     def up(self):
-        self.segments[0].setheading(90)
+        if self.segments[0].heading() != "UP":
+            self.segments[0].setheading(90)
 
     def down(self):
-        self.segments[0].setheading(270)    
+        if self.segments[0].heading() != "DOWN":
+            self.segments[0].setheading(270)    
