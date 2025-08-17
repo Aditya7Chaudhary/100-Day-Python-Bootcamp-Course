@@ -34,6 +34,7 @@ Kindly note that some days didn't had a project but coding in someother website 
 | 19  | Instances, State and Higher Order | ✅ Done | [Day 19](./Day_019) |
 | 20  | Snake Game Part 1 | ✅ Done | [Day 20](./Day_020_021/Day_020_021.py) |
 | 21  | Snake Game Part 2 | ✅ Done | [Day 21](./Day_020_021/Day_020_021.py) |
+| 22  | Ping Pong Game | 🔜 Coming soon | [Day 22](./Day_020_021/Day_020_021.py) |
 
 
 > ✅ = Completed, 🔜 = Coming soon
