@@ -10,6 +10,8 @@ screen.setup(width=600, height=600)
 screen.tracer(0)
 screen.listen()
 turtle = Player()
+scoreboard = Scoreboard()
+screen.update()
 
 def crossing_cars():
     cars = []
@@ -21,6 +23,7 @@ def crossing_cars():
     return cars
 
 cars = crossing_cars()
+level = 1
 
 game_is_on = True
 while game_is_on:
@@ -30,17 +33,26 @@ while game_is_on:
         car.move()
         car.car_loop()
         x,y = car.car.pos()
-        if turtle.clash(x,y):
-            screen.exitonclick()
+        """if turtle.clash(x,y):
+            game_is_on = False"""
     
     screen.onkeypress(turtle.move,"Up")
     screen.update()
+    
+    if turtle.win() and level == 2:
+        for car in cars:
+            car.deleting_car()
+        turtle.turtle.hideturtle()
+        scoreboard.win()
+        game_is_on = False
 
-    if turtle.finish():
+    elif turtle.finish() and level == 1:
         for car in cars:
             car.deleting_car()
         cars = crossing_cars()
         for car in cars:
             car.car.speed(0)
+        scoreboard.level_2()
+        level += 1
 
 screen.exitonclick()

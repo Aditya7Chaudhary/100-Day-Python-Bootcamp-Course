@@ -24,4 +24,4 @@ class CarManager:
             self.car.goto((300,y))
 
     def deleting_car(self):
-        self.car.color('white')
+        self.car.hideturtle()

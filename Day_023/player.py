@@ -20,6 +20,11 @@ class Player:
         if y >= FINISH_LINE_Y:
             self.turtle.goto(STARTING_POSITION)
             return True
+    
+    def win(self):
+        x,y = self.turtle.pos()
+        if y >= FINISH_LINE_Y:
+            return True
         
     def clash(self,x,y):
         x_0,y_0 = self.turtle.pos()
