@@ -15,7 +15,7 @@ screen.update()
 
 def crossing_cars():
     cars = []
-    for i in range(40):
+    for i in range(20):
         car = CarManager()
         car.car.goto((random.randint(-300,300),random.randint(-240,240)))
         cars.append(car)
@@ -33,18 +33,21 @@ while game_is_on:
         car.move()
         car.car_loop()
         x,y = car.car.pos()
-        """if turtle.clash(x,y):
-            game_is_on = False"""
+        if turtle.clash(x,y):
+            turtle.turtle.hideturtle()
+            for car in cars:
+                car.deleting_car()
+            scoreboard.game_over()
+
     
     screen.onkeypress(turtle.move,"Up")
     screen.update()
     
     if turtle.win() and level == 2:
+        turtle.turtle.hideturtle()
         for car in cars:
             car.deleting_car()
-        turtle.turtle.hideturtle()
         scoreboard.win()
-        game_is_on = False
 
     elif turtle.finish() and level == 1:
         for car in cars:
