@@ -1,4 +1,4 @@
-from turtle import Turtle,Screen
+from turtle import Turtle, Screen
 screen = Screen()
 
 class Snake:
@@ -20,6 +20,8 @@ class Snake:
             a -= 20
 
     def add_tail(self):
+        screen.tracer(0)
+        screen.update()
         self.s = Turtle()
         i = self.s
         i.shape("square")
@@ -37,6 +39,7 @@ class Snake:
             i.goto((e.pos()[0],e.pos()[1]+20))
 
         self.segments.append(i)
+        screen.update()
 
     def wall_hit(self):
         x,y = self.segments[0].pos()
@@ -46,8 +49,10 @@ class Snake:
     def hit_tail(self):
         x,y = self.segments[0].pos()
         for i in self.segments:
+            if i == self.segments[0]:
+                continue
             if i.pos() == (x,y):
-                return True
+                return True                
 
     def move(self):
         i = 1
