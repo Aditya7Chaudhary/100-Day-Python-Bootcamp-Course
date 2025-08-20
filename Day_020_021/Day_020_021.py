@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 from snake import Snake
 from food import Food
+from scoreboard import Scoreboard
 import random
 import time
 
@@ -11,16 +12,22 @@ screen.setup(1000,500)
 screen.tracer(0)
 screen.listen()
 
+scoreboard = Scoreboard()
+score = 0
+
 snake = Snake()
 food = Food()
 
 game_is_on = True
 while game_is_on:
     if food.food_eaten(snake.segments[0].pos()):
+        score += 1
+        scoreboard.update_score(score)
         snake.add_tail()
     if snake.wall_hit():
         screen.exitonclick()
-        print("You hit the wall!!")
+    if snake.hit_tail():
+        screen.exitonclick()
 
     screen.update()
     time.sleep(0.1)
