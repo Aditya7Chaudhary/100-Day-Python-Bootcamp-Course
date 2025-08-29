@@ -22,12 +22,16 @@ game_is_on = True
 while game_is_on:
     if food.food_eaten(snake.segments[0].pos()):
         score += 1
+        scoreboard.highscore_check(score)
         scoreboard.update_score(score)
         snake.add_tail()
     if snake.wall_hit():
-        screen.exitonclick()
+        score = scoreboard.highscore_check(score) 
+        snake.snake_reset()
     if snake.hit_tail():
-        screen.exitonclick()
+        score = scoreboard.highscore_check(score)
+        snake.snake_reset()
+
 
     screen.update()
     time.sleep(0.1)
