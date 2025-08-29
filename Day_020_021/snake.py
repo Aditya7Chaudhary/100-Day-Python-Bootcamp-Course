@@ -54,6 +54,13 @@ class Snake:
             if i.pos() == (x,y):
                 return True                
 
+    def snake_reset(self):
+        for seg in self.segments:
+            seg.hideturtle()
+            del seg
+        self.segments = []
+        self.create_snake()
+
     def move(self):
         i = 1
         seg = self.segments
