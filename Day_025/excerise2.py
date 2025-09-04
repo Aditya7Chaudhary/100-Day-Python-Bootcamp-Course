@@ -22,4 +22,4 @@ dict["count"] = count
 
 df = pandas.DataFrame(dict)
 print(df)
-df.to_csv("100-Day-Python-Bootcamp-Course\Day_025\Colour-count.py")
+df.to_csv("100-Day-Python-Bootcamp-Course\Day_025\Colour-count")
