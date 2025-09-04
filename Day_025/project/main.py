@@ -16,23 +16,33 @@ score_changer.penup()
 score_changer.goto(-300,220)
 score_changer.pencolor('black')
 score = 0
-score_changer.write(f"Score = {score}",font = ("Arial",20,"bold"))
+score_changer.write(f"You have guessed {score}/50",font = ("Arial",10,"bold"))
 
 data = pandas.read_csv(r"100-Day-Python-Bootcamp-Course\Day_025\project\50_states.csv")
 for i in range(len(data)):
+    if score == 50:
+        score_changer.goto(0,0)
+        score_changer.color('red')
+        score_changer.clear()
+        score_changer.write(f"You have guessed all 50/50 states.\n                   You Win!!",align="center",font = ("Arial",20,"bold"))
+        break
+
     guess = screen.textinput(f"Your guess","Enter the US state name")
-    if guess in data.state.to_list():
+    states = data.state.to_list()
+    guess = guess.capitalize()
+
+    if guess in states:
         state_data = data[data.state == guess]
         pointer.goto(int(state_data.x),int(state_data.y))
         pointer.dot(10,"blue")
         score += 1
         score_changer.clear()
-        score_changer.write(f"Score = {score}",font = ("Arial",20,"bold"))
+        score_changer.write(f"You have guessed {score}/50",font = ("Arial",10,"bold"))
     else:
         score_changer.goto(0,0)
         score_changer.color('red')
         score_changer.clear()
-        score_changer.write(f"Your Score is : {score}",align="center",font = ("Arial",20,"bold"))
+        score_changer.write(f"You Guessed {score}/50",align="center",font = ("Arial",20,"bold"))
         break
 
 screen.exitonclick()
