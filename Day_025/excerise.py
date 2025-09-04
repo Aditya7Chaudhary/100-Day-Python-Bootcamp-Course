@@ -15,4 +15,10 @@ with open(r"100-Day-Python-Bootcamp-Course\Day_025\weather_data.csv","r") as fil
 import pandas
 
 data = pandas.read_csv(r"100-Day-Python-Bootcamp-Course\Day_025\weather_data.csv")
-print(data)
+print(data,"\n")
+print(data["temp"])
+temperature = []
+for i in data["temp"]:
+    temperature.append(i)
+
+print(temperature)
