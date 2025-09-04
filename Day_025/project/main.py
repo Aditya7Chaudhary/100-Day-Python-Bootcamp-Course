@@ -17,6 +17,8 @@ score_changer.goto(-300,220)
 score_changer.pencolor('black')
 score = 0
 score_changer.write(f"You have guessed {score}/50",font = ("Arial",10,"bold"))
+states_guessed = []
+
 
 data = pandas.read_csv(r"100-Day-Python-Bootcamp-Course\Day_025\project\50_states.csv")
 for i in range(len(data)):
@@ -38,6 +40,7 @@ for i in range(len(data)):
         score += 1
         score_changer.clear()
         score_changer.write(f"You have guessed {score}/50",font = ("Arial",10,"bold"))
+        states_guessed.append(guess)
     else:
         score_changer.goto(0,0)
         score_changer.color('red')
@@ -45,4 +48,11 @@ for i in range(len(data)):
         score_changer.write(f"You Guessed {score}/50",align="center",font = ("Arial",20,"bold"))
         break
 
+states_not_guessed = data.state.to_list()
+for i in states_guessed:
+    if i in states_not_guessed:
+        states_not_guessed.remove(i)
+
+df = pandas.DataFrame(states_not_guessed)
+df.to_csv(r"100-Day-Python-Bootcamp-Course\Day_025\project\States-to-learn.csv")
 screen.exitonclick()
