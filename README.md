@@ -38,7 +38,9 @@ Kindly note that some days didn't had a project but coding in someother website 
 | 23  | Turtle Crossing | ✅ Done | [Day 23](./Day_023/Day_023.py) |
 | 24  | Intermediate - Files, Directories and Paths | ✅ Done | [Day 24](./Day_024) |
 | 25  | Working with CSV data and Pandas | ✅ Done | [Day 25](./Day_025) |
-| 26  | List Comprehension and the NATO Alphabet | 🔜 Coming soon | [Day 26](./Day_026) |
+| 26  | List Comprehension and the NATO Alphabet | ✅ Done | [Day 26](./Day_026/) |
+| 27  | Mile to Kilometer Converting project | 🔜 Coming soon | [Day 27](./Day_027/) |
+
 
 
 > ✅ = Completed, 🔜 = Coming soon
