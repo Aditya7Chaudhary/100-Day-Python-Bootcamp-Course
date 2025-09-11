@@ -15,6 +15,7 @@ button = tkinter.Button(text="Click me",command=button_click)
 button.pack()
 
 input = tkinter.Entry()
+input.insert(END, string = "Hello World")
 input.pack()
 
 window.mainloop()
