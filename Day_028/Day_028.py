@@ -26,29 +26,70 @@ current_time = WORK_MIN*60
 text_id = canvas.create_text(190,140,text=f"{current_time//60:02d}:{current_time%60:02d}",font=(FONT_NAME,30,"bold"),fill="white")
 
 
-def clicking_of_start_button(current_time):
-    start_button.config(text="Stop")
-    count_down(current_time//60,current_time%60,text_id)
+# Global variable to track the timer state
+timer_running = False
 
-def count_down(min,sec,text_id):
-    start_button.config(command=lambda:count_down_stop(min,sec))
-    if start_button.cget("text") == "Stop":
+def clicking_of_start_button():
+    global timer_running, current_time
+    if not timer_running:
+        start_button.config(text="Stop")
+        timer_running = True
+        count_down(current_time // 60, current_time % 60, text_id)
+    else:
+        count_down_stop(current_time // 60, current_time % 60)
+
+def count_down(min, sec, text_id):
+    global timer_running, current_time
+    
+    # Only continue if timer is still running
+    if not timer_running:
         canvas.delete(text_id)
-        if sec == 0:
-            min -= 1
-            sec = 59
-        text_id = canvas.create_text(190,140,text=f"{min:02d}:{sec:02d}",font=(FONT_NAME,30,"bold"),fill="white")
-        window.after(1000,count_down,min,sec-1,text_id)
+        return
+        
+    # Update the display
+    canvas.delete(text_id)
+    text_id = canvas.create_text(190, 140, text=f"{min:02d}:{sec:02d}", 
+                                font=(FONT_NAME, 30, "bold"), fill="white")
+    
+    # Check if time is up
+    if min == 0 and sec == 0:
+        timer_running = False
+        start_button.config(text="Start")
+        # Add your completion logic here (check marks, etc.)
+        return
+    
+    # Calculate next time values
+    if sec == 0:
+        next_min = min - 1
+        next_sec = 59
+    else:
+        next_min = min
+        next_sec = sec - 1
+        
+    # Store current time for pause/resume
+    current_time = next_min * 60 + next_sec
+    
+    # Schedule next update
+    window.after(1000, count_down, next_min, next_sec, text_id)
 
-def count_down_stop(min,sec):
-    global current_time
-    current_time = min*60 + sec
-    start_button.config(text="Start",command=lambda:clicking_of_start_button(current_time))
+def count_down_stop(min, sec):
+    global timer_running, current_time
+    timer_running = False
+    current_time = min * 60 + sec
+    start_button.config(text="Start")
 
+def reset_timer():
+    global timer_running, current_time,text_id
+    timer_running = False
+    current_time = WORK_MIN * 60
+    canvas.delete(text_id)
+    text_id = canvas.create_text(190, 140, text=f"{current_time//60:02d}:{current_time%60:02d}", 
+                                font=(FONT_NAME, 30, "bold"), fill="white")
+    start_button.config(text="Start")
 
-start_button = tkinter.Button(text="Start",command=clicking_of_start_button(current_time))
-
-reset_button = tkinter.Button(text="Reset")
+# Fixed button commands - no parentheses and no parameters in the command reference
+start_button = tkinter.Button(text="Start", command=clicking_of_start_button)
+reset_button = tkinter.Button(text="Reset", command=reset_timer)
 
 check_mark = tkinter.Label(text=" ",bg=YELLOW,fg=GREEN,font=(FONT_NAME,20,"bold"))
 
