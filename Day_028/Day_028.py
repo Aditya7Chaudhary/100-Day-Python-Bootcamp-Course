@@ -28,10 +28,11 @@ text_id = canvas.create_text(190,140,text=f"{current_time//60:02d}:{current_time
 
 # Global variable to track the timer state
 timer_running = False
+f = 0
 
 def clicking_of_start_button():
-    global timer_running, current_time
-    if not timer_running:
+    global timer_running, current_time, f
+    if not timer_running :
         start_button.config(text="Stop")
         timer_running = True
         count_down(current_time // 60, current_time % 60, text_id)
@@ -39,13 +40,17 @@ def clicking_of_start_button():
         count_down_stop(current_time // 60, current_time % 60)
 
 def count_down(min, sec, text_id):
-    global timer_running, current_time
+    global timer_running, current_time, f
     
     # Only continue if timer is still running
     if not timer_running:
         canvas.delete(text_id)
         return
         
+    if current_time == 0:
+        f += 1
+        current_time = WORK_MIN*60
+
     # Update the display
     canvas.delete(text_id)
     text_id = canvas.create_text(190, 140, text=f"{min:02d}:{sec:02d}", 
@@ -68,7 +73,7 @@ def count_down(min, sec, text_id):
         
     # Store current time for pause/resume
     current_time = next_min * 60 + next_sec
-    
+
     # Schedule next update
     window.after(1000, count_down, next_min, next_sec, text_id)
 
@@ -79,21 +84,27 @@ def count_down_stop(min, sec):
     start_button.config(text="Start")
 
 def reset_timer():
-    global timer_running, current_time,text_id
+    global timer_running, current_time,text_id, f
     timer_running = False
-    current_time = WORK_MIN * 60
-    canvas.delete(text_id)
-    text_id = canvas.create_text(190, 140, text=f"{current_time//60:02d}:{current_time%60:02d}", 
-                                font=(FONT_NAME, 30, "bold"), fill="white")
-    start_button.config(text="Start")
+
+    if f%2 == 0:
+        current_time = WORK_MIN * 60
+        canvas.delete(text_id)
+        text_id = canvas.create_text(190, 140, text=f"{current_time//60:02d}:{current_time%60:02d}", 
+                                    font=(FONT_NAME, 30, "bold"), fill="white")
+        start_button.config(text="Start")
+
+    else:
+        current_time = SHORT_BREAK_MIN * 60
+        canvas.delete(text_id)
+        text_id = canvas.create_text(190, 140, text=f"{current_time//60:02d}:{current_time%60:02d}", 
+                                    font=(FONT_NAME, 30, "bold"), fill="white")
+        start_button.config(text="Start")
 
 def break_time():
     global current_time
     if current_time == 0:
-        current_time = SHORT_BREAK_MIN*60
-        canvas.delete(text_id)
-        text_id = canvas.create_text(190, 140, text=f"{current_time//60:02d}:{current_time%60:02d}", 
-                                    font=(FONT_NAME, 30, "bold"), fill="white")
+        return True
 
 
 # Fixed button commands - no parentheses and no parameters in the command reference
